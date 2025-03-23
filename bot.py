@@ -5,7 +5,7 @@ import time
 import threading
 
 # Replace with your actual bot token
-token = "7886146867:AAGmzGkiNhD9u-XmB4D-YHTkMLJXzI2d9iA"
+token = "YOUR_BOT_TOKEN"
 
 bot = telebot.TeleBot(token)
 
@@ -46,6 +46,7 @@ def download_video(message, url):
         ydl_opts = {
             'outtmpl': 'downloads/%(title)s.%(ext)s',
             'format': 'best',
+            'cookiefile': 'cookies.txt',  # Added this line to use your cookies.txt
             'progress_hooks': [lambda d: progress_hook(d, chat_id, sent_msg.message_id)]
         }
 
