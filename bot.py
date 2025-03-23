@@ -3,11 +3,17 @@ import yt_dlp
 import os
 import time
 import threading
+from flask import Flask, request
+import logging
+
+# Flask App Setup
+app = Flask(__name__)
+logging.basicConfig(level=logging.INFO)
 
 # Replace with your actual bot token
-token = "7886146867:AAEhldt1MYcOb2CnXbJzrM28RKcwGQ4UJ1U"
-
-bot = telebot.TeleBot(token)
+TOKEN = os.getenv("7886146867:AAGmzGkiNhD9u-XmB4D-YHTkMLJXzI2d9iA")
+WEBHOOK_URL = f"https://{os.getenv('RAILWAY_URL')}/{TOKEN}"
+bot = telebot.TeleBot(TOKEN)
 
 # Create downloads folder if it doesn't exist
 if not os.path.exists("downloads"):
@@ -39,7 +45,6 @@ def format_time(seconds):
 # Download handler function
 def download_video(message, url):
     chat_id = message.chat.id
-
     try:
         sent_msg = bot.send_message(chat_id, "Preparing to download video... 📥")
 
@@ -99,4 +104,21 @@ def handle_message(message):
     thread = threading.Thread(target=download_video, args=(message, url))
     thread.start()  # Run downloads in separate threads to handle multiple downloads
 
-bot.infinity_polling()
+# Webhook route
+@app.route(f'/{TOKEN}', methods=['POST'])
+def receive_update():
+    json_str = request.get_data().decode('UTF-8')
+    update = telebot.types.Update.de_json(json_str)
+    bot.process_new_updates([update])
+    return '!', 200
+
+@app.route('/')
+def webhook():
+    bot.remove_webhook()
+    bot.set_webhook(url=WEBHOOK_URL)
+    return 'Webhook set successfully', 200
+
+if __name__ == "__main__":
+    bot.remove_webhook()
+    bot.set_webhook(url=WEBHOOK_URL)
+    app.run(host="0.0.0.0", port=int(os.getenv('PORT', 5000)))
