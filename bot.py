@@ -46,7 +46,7 @@ def download_video(message, url):
         ydl_opts = {
             'outtmpl': 'downloads/%(title)s.%(ext)s',
             'format': 'best',
-            'cookiefile': 'cookies.txt',  # Added this line to use your cookies.txt
+            'cookies': 'cookies.txt',  # Making sure cookies file is used correctly
             'progress_hooks': [lambda d: progress_hook(d, chat_id, sent_msg.message_id)]
         }
 
