@@ -9,6 +9,12 @@ token = "7886146867:AAFtl9uE-JUwZjrOKwxw5ONB5CT1mR_XV3U"
 
 bot = telebot.TeleBot(token)
 
+# Delete any existing webhook to avoid conflicts
+bot.delete_webhook(drop_pending_updates=True)
+
+# Check if the bot is properly connected
+print(bot.get_me())
+
 # Create downloads folder if it doesn't exist
 if not os.path.exists("downloads"):
     os.makedirs("downloads")
@@ -46,7 +52,7 @@ def download_video(message, url):
         ydl_opts = {
             'outtmpl': 'downloads/%(title)s.%(ext)s',
             'format': 'best',
-            'cookies': 'cookies.txt',  # Making sure cookies file is used correctly
+            'cookiefile': 'cookies.txt',  # Making sure cookies file is used correctly
             'progress_hooks': [lambda d: progress_hook(d, chat_id, sent_msg.message_id)]
         }
 
