@@ -5,7 +5,7 @@ import time
 import threading
 
 # Replace with your actual bot token
-token = "7886146867:AAGmzGkiNhD9u-XmB4D-YHTkMLJXzI2d9iA"
+token = "7886146867:AAFtl9uE-JUwZjrOKwxw5ONB5CT1mR_XV3U"
 
 bot = telebot.TeleBot(token)
 
