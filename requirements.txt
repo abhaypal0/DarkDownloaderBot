@@ -1,2 +1,4 @@
+Flask
+pyTelegramBotAPI
 pyTelegramBotAPI==4.10.0
 yt-dlp
