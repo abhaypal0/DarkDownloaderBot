@@ -1,0 +1,13 @@
+# Netscape HTTP Cookie File
+# http://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file!  Do not edit.
+
+.youtube.com	TRUE	/	TRUE	1775617912	__Secure-3PAPISID	4urBJZsMksGUKnBP/AYXoJeMoIDqjOwO0V
+.youtube.com	TRUE	/	FALSE	1746881707	_gcl_au	1.1.307303379.1739105707
+.youtube.com	TRUE	/	TRUE	1775617912	__Secure-3PSID	g.a000uQgjk8xbfmWxglRjP_Bh7xnR0XdO12N4F5iqejoZryHUJQ2_4CwHwXwYS9E3xR3xmR4hugACgYKASUSARQSFQHGX2MienfaDviXXj3AF9IaCr_rzhoVAUF8yKq8Et50hAyGE1ohMA6ncAC50076
+.youtube.com	TRUE	/	TRUE	1777316485	PREF	f6=40000000&f7=100&tz=Asia.Calcutta&repeat=NONE&f4=4000000&autoplay=true
+.youtube.com	TRUE	/	TRUE	1758307953	VISITOR_INFO1_LIVE	6FgNqYI94jg
+.youtube.com	TRUE	/	TRUE	1758307953	VISITOR_PRIVACY_METADATA	CgJJThIEGgAgbQ%3D%3D
+.youtube.com	TRUE	/	TRUE	1773907549	__Secure-1PSIDTS	sidts-CjIB7pHptSaebJk9iZ_g9jjamr4BBSVDelsXXQS3vLiOh0TPV0LVuIgd4j1n9JEj060uxRAA
+.youtube.com	TRUE	/	TRUE	1773907549	__Secure-3PSIDTS	sidts-CjIB7pHptSaebJk9iZ_g9jjamr4BBSVDelsXXQS3vLiOh0TPV0LVuIgd4j1n9JEj060uxRAA
+.youtube.com	TRUE	/	TRUE	1773908225	__Secure-3PSIDCC	AKEyXzW-cOZS1w-skclmMDzoFDX7ddu09_ILOyabM1QgC4ywOEATwuegyMVX3QwC3ecLKAt-17M
